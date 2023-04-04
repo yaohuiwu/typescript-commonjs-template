@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc-watch --onsuccess \"node dist/index.js\"",
+    "lint": "npx tslint --project tsconfig.json --config tslint.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/yaohuiwu/typescript-commonjs-template#readme",
   "devDependencies": {
     "tsc-watch": "^2.1.2",
+    "tslint": "^5.16.0",
     "typescript": "^3.5.1"
   }
 }
