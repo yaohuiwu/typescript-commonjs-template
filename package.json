@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc-watch --onsuccess \"node dist/index.js\"",
     "lint": "npx tslint --project tsconfig.json --config tslint.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
