@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/yaohuiwu/typescript-commonjs-template#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
     "tsc-watch": "^2.1.2",
     "tslint": "^5.16.0",
     "typescript": "^3.5.1"
