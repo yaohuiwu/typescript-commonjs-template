@@ -1,12 +1,21 @@
-import { sum } from "./calc.js";
+import { Context, APIGatewayProxyCallback, APIGatewayEvent } from 'aws-lambda';
 
-function printMessage(msg: string): void {
-    console.log(`Message: ${ msg }`);
-}
+export const handler = (event: APIGatewayEvent, context: Context, callback: APIGatewayProxyCallback): void => {
+    console.log(`Event: ${JSON.stringify(event, null, 2)}`);
+    console.log(`Context: ${JSON.stringify(context, null, 2)}`);
 
-printMessage("Hello, Typescript");
-// tslint:disable-next-line no-debugger
-debugger;
+    let responseMessage = "Hello, World!";
+    if (event.queryStringParameters && event.queryStringParameters["Name"]) {
+        responseMessage = "Hello," + event.queryStringParameters["Name"];
+    }
 
-const total = sum(100, 200, 300);
-console.log(`Total: ${total}`);
+    callback(null, {
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            message: responseMessage,
+        }),
+    });
+};
